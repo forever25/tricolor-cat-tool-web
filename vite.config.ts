@@ -48,7 +48,6 @@ export default ({ command, mode }) => {
       port: VITE_PORT,
       open: false,
       cors: false,
-      host: '0.0.0.0',
       proxy: proxy[env]
     }
   })

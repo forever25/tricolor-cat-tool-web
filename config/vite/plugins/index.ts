@@ -5,7 +5,6 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import { configStyleImportPlugin } from './styleImport'
 import { autoRegistryComponents } from './component'
 import { AutoImportDeps } from './autoImport'
-import { viteMockServe } from 'vite-plugin-mock'
 
 export function createVitePlugins(isBuild: boolean) {
   const vitePlugins: (Plugin | Plugin[])[] = [
@@ -16,11 +15,7 @@ export function createVitePlugins(isBuild: boolean) {
       polyfills: ['es/']
     }),
     autoRegistryComponents(),
-    AutoImportDeps(),
-    viteMockServe({
-      ignore: /^\_/,
-      mockPath: 'mock'
-    })
+    AutoImportDeps()
   ]
 
   // vite-plugin-style-import

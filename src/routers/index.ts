@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+import Layout from '@/layouts/index.vue'
+
 export const routerHistory = createWebHistory()
 
 const routers = createRouter({
@@ -7,12 +9,15 @@ const routers = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/setup'
-    },
-    {
-      name: 'setup',
-      path: '/setup',
-      component: () => import('@/views/setup/index.vue')
+      redirect: '/home',
+      component: Layout,
+      children: [
+        {
+          name: 'home',
+          path: '/home',
+          component: () => import('@/views/home/index.vue')
+        }
+      ]
     }
   ]
 })

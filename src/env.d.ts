@@ -14,7 +14,6 @@ declare module '*.webp'
 declare module '*.tiff'
 declare module 'omit.js'
 declare module 'numeral'
-declare module 'mockjs'
 declare module 'pdfh5'
 
 declare module '*.vue' {

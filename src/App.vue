@@ -1,11 +1,5 @@
 <template>
-  <div class="w-screen h-screen">
-    <router-view v-slot="{ Component }">
-      <keep-alive>
-        <component :is="Component" />
-      </keep-alive>
-    </router-view>
-  </div>
+  <router-view />
 </template>
 
 <style lang="less">

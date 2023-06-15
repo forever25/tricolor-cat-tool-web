@@ -1,6 +1,7 @@
 *.sh
 node_modules
 *.md
+*.html
 *.woff
 *.ttf
 .vscode
