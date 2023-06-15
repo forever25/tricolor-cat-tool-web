@@ -51,9 +51,6 @@ devDependencies:
   '@types/lodash-es':
     specifier: ^4.17.5
     version: registry.npmmirror.com/@types/lodash-es@4.17.7
-  '@types/mockjs':
-    specifier: ^1.0.7
-    version: registry.npmmirror.com/@types/mockjs@1.0.7
   '@types/node':
     specifier: ^18.11.9
     version: registry.npmmirror.com/@types/node@18.15.13
@@ -99,9 +96,6 @@ devDependencies:
   lint-staged:
     specifier: ^11.2.6
     version: registry.npmmirror.com/lint-staged@11.2.6
-  mockjs:
-    specifier: ^1.1.0
-    version: registry.npmmirror.com/mockjs@1.1.0
   postcss:
     specifier: ^8.3.11
     version: registry.npmmirror.com/postcss@8.4.23
