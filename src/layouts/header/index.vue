@@ -1,49 +1,87 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-import { useRouterStore } from '@/store/modules/router'
+// import { useRouter } from 'vue-router'
+// import { useRouterStore } from '@/store/modules/router'
 
-const routerStore = useRouterStore()
-const { push } = useRouter()
+// const routerStore = useRouterStore()
+// const { push } = useRouter()
 
-const menuList = [
-  {
-    title: '首页',
-    name: 'Home'
-  },
-  {
-    title: '站内工具',
-    name: '/'
-  },
-  {
-    title: '外链工具',
-    name: '/'
-  }
-]
+// const menuList = [
+//   {
+//     title: '首页',
+//     name: 'Home'
+//   },
+//   {
+//     title: '站内工具',
+//     name: '/'
+//   },
+//   {
+//     title: '外链工具',
+//     name: '/'
+//   }
+// ]
 
-function handleClickMenu(routeName: string) {
-  push({ name: routeName })
-}
+// function handleClickMenu(routeName: string) {
+//   push({ name: routeName })
+// }
 </script>
 
 <template>
-  <div class="flex items-center justify-center w-full bg-white h-14">
-    <header class="h-full w-[1200px] flex items-center justify-start">
-      <div></div>
-      <ul class="flex h-full">
-        <li
-          :class="`transition-all flex items-center mx-4 h-full text-sm cursor-pointer select-none border-b-blue-600 pt-0.5 hover:border-b-2 hover:border-opacity-100 hover:text-opacity-100 ${
-            routerStore.getCurMenuName === it.name
-              ? 'border-b-2 border-opacity-100 text-opacity-100'
-              : 'border-b-2 border-opacity-0 text-opacity-90'
-          }`"
-          v-for="it in menuList"
-          :key="it.name"
-          @click="handleClickMenu(it.name)"
+  <div class="navbar bg-base-100">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <label tabindex="0" class="btn btn-ghost lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </label>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
         >
-          {{ it.title }}
+          <li><a>Item 1</a></li>
+          <li>
+            <a>Parent</a>
+            <ul class="p-2">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </li>
+          <li><a>Item 3</a></li>
+        </ul>
+      </div>
+      <a class="btn btn-ghost normal-case text-xl">
+        <img src="/logo.svg" alt="" srcset="" />
+      </a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        <li><a>Item 1</a></li>
+        <li tabindex="0">
+          <details>
+            <summary>Parent</summary>
+            <ul class="p-2">
+              <li><a>Submenu 1</a></li>
+              <li><a>Submenu 2</a></li>
+            </ul>
+          </details>
         </li>
+        <li><a>Item 3</a></li>
       </ul>
-    </header>
+    </div>
+    <div class="navbar-end">
+      <!-- <a class="btn">Button</a> -->
+    </div>
   </div>
 </template>
 
